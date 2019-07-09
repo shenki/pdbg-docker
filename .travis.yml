@@ -9,7 +9,6 @@ services:
 
 script:
   - make release
-  - make check
 
 deploy:
   provider: script

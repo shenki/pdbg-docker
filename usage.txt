@@ -1,0 +1,11 @@
+usage: docker run shenki/pdbg-build [configure arguments]
+
+eg.
+
+   $ docker run \
+        --env REPO=upstream \
+        --rm \
+        --workdir /travis \
+        --volume ${TRAVIS_BUILD_DIR}:/travis \
+        shenki/pdbg-build --host=arm-linux-gnueabi
+
