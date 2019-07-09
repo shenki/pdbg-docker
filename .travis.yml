@@ -1,0 +1,27 @@
+language: shell
+sudo: false
+os:
+  - linux-ppc64le
+  - linux
+
+services:
+  - docker
+
+script:
+  - make release
+  - make check
+
+deploy:
+  provider: script
+  script: make deploy
+  on:
+    branch: master
+
+notifications:
+  email:
+    recipients:
+      - joel@jms.id.au
+    on_success: never
+    on_failure: always
+
+# vim:set et ts=2 sw=2:
